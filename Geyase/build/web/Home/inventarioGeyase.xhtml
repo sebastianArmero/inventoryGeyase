@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <h:head>
+        <link href="../resources/css/navHome.css" rel="stylesheet" type="text/css"/>
+        <link href="../resources/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="../resources/css/cssLayout.css" rel="stylesheet" type="text/css"/>
+        <link href="../resources/css/default.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
+        <script src="../resources/js/bootstrap.js" type="text/javascript"></script>
+        <title>Facelet Title</title>
+
+    </h:head>
+
+    <h:body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- <img alt="Brand" src="../resources/img/GSY4.png" style="height: 55px;"/>-->
+                </div>
+            
+                <ul class="nav navbar-nav">
+                    <li role="presentation" class=""><a class="btn  botonNav"   href="../Home/home.xhtml"> <span class="glyphicon glyphicon-home" aria-hidden="true"></span> INICIO </a></li>
+                    <li role="presentation" class=""> <a class="btn   botonNav" href="../Client/clientCreate.xhtml"> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> CLIENTES</a></li>
+                    <li role="presentation" class=""><a class="btn   botonNav"  href="../Product/productCreate.xhtml"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>  PRODUCTOS</a></li>
+                    <li role="presentation" class=""><a class="btn   botonNav"   href="../Factura/facturaCreate.xhtml" ><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> FACTURA</a></li>
+
+                </ul>
+
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--
+                            fas fa-power-off
+                            fas fa-sign-out-alt
+                        -->
+                        <li class="dropdown" style="font-size: 15px;">
+                              <span class="col-md-1 col-md-offset-2" style="margin-left: -26px; margin-top: 12px;font-size: 21px;">  <i class=" fas fa-power-off fa-spin" aria-hidden="true"></i> </span>
+                          
+                              <li><a href="#{controllerLogin.logout()}" style="margin-left: -20px;font-size: 15px;">SALIR</a></li>
+
+                          <!--  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">home<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a>Salir</a></li>
+                            </ul>-->
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+
+
+    </h:body>
+
+</html>
+

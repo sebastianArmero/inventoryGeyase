@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link href="../resources/css/home.css" rel="stylesheet" type="text/css"/>
+        <link rel="shortcut icon" type="image/x-icon" href="../resources/img/GSY4.ico" />
+    
+        <title>GEYASE INVENTORY</title>
+                <f:event type="preRenderView" listener="#{securityController.verificarSesion()}"></f:event>
+
+
+    </h:head>
+    <h:body>
+        
+        <ui:include src="../Home/inventarioGeyase.xhtml"> </ui:include>
+
+        <div class="imgenFondo">
+            <div style="color: seashell;">
+                <div class="container ">
+                    <div class="row">
+                        <h3 style="text-align: center; margin-bottom: 50px;">
+                            <strong style="font-size: 25px; font-family: cursive;">BIENVENIDOS AL SISTEMA DE INVENTARIOS GEYASE   #{controllerLogin.usuarioLogiado}</strong>
+
+                        </h3>
+
+
+                        <p class="justify descipcion">  El concepto de inventario en una empresa se basa en todos los productos
+                            y materias primas que posee la empresa y que son potenciales para la futura
+                            venta y que proporcione beneficios a la organización. El inventario está formado
+                            por todo el stock de la empresa que no se ha vendido, las materias primas que se
+                            poseen que les permiten crear nuevos productos y todos aquellos productos que se encuentran
+                            en el proceso de producción de la empresa y próximamente ya estarán disponibles para su venta.</p>
+                    </div>
+                </div>
+                <div class="imagenLoogo">
+                    <img src="../resources/img/GSY4.png" alt=""/>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </h:body>
+</html>
+

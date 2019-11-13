@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+
+        <link href="../resources/css/default.css" rel="stylesheet" type="text/css"/>
+        <link href="../resources/css/cssLayout.css" rel="stylesheet" type="text/css"/>
+        <link href="../resources/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
+        <link rel="shortcut icon" type="image/x-icon" href="../resources/img/GSY4.ico" />
+
+        <title>GEYASE LISTA PRODUCTOS</title>
+    </h:head>
+    <h:body>
+        <a href=""></a>
+        <ui:include src="../Home/inventarioGeyase.xhtml"> </ui:include>
+        <ul class="nav nav-pills col-sm-6 col-md-12" style=" margin-bottom: 25px;">
+            <li role="presentation" class=""><a href="#{controllerProduct.redirigirPro()}">REGISTRAR PRODUCTO</a></li>
+            <li role="presentation"><a class="btn btn-primary active" href="#">LISTAR PRODUCTOS</a></li>
+        </ul>
+             <h:form>                             
+                 <h:commandLink style="margin-left: 26px;"   class="btn btn-light active " value="Descargar Reporte" actionListener="#{controllerProduct.generarPDF()}"/>
+            </h:form>
+        <div class="table-responsive col-sm-12" >
+            <h:form>
+                <p:growl id="msgs" showDetail="true" />
+                <a href="#{controllerProduct.listarProductos()}"></a>
+                <p:dataTable class="table table-striped" var="producto" resizableColumns="true" style="margin-bottom:20px" value="#{controllerProduct.producto}">
+                    <p:column headerText="Id">
+                        <h:outputText value="#{producto.codPro}" />
+                    </p:column>
+
+                    <p:column headerText="DESCRIPCION PRODUCTO">
+                        <h:outputText value="#{producto.despro}" />
+                    </p:column>
+
+                    <p:column headerText="PRECIO">
+                        <h:outputText value="#{producto.prepro}" />
+                    </p:column>
+
+                    <p:column headerText="CANTIDAD">
+                        <h:outputText value="#{producto.cantidadpro}" />
+                    </p:column>
+
+
+                    <p:column headerText="Accion">
+
+                        <h:commandButton value="Editar"  action="#{controllerProduct.verDatosEditarProducto(producto)}"></h:commandButton>
+                        <h:commandButton value="Eliminar"  action="#{controllerProduct.borrarProducto(producto)}"></h:commandButton>
+                    </p:column>
+
+
+                </p:dataTable>
+
+                <h:commandButton value="Total Productos" class="btn btn-primary active"  action="#{controllerProduct.calcularSumaProducto()}"></h:commandButton>
+                #{controllerProduct.sumProductos}
+                <br></br>
+                <br></br>
+
+
+
+            </h:form>
+        </div>
+
+    </h:body>
+</html>
+

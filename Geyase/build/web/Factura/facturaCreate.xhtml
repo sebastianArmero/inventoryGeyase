@@ -1,0 +1,243 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>    
+        <link rel="shortcut icon" type="image/x-icon" href="../resources/img/GSY4.ico" />
+        <title>GEYASE FACTURA</title>
+    </h:head>
+
+    <h:body>
+
+        <ui:include src="../Home/inventarioGeyase.xhtml"> </ui:include>
+        <h:form>
+            <div class="container">
+                <div class="row">
+               
+
+                </div><br></br><br></br>  
+                <div class="row">
+                    <div class=" col-sm-6 col-md-3">
+                        <p:outputLabel value="Codigo Cliente"/><br></br>
+                        <h:inputText id="CODCLI" class="form-control" value="#{controllerFactura.llamarCliente.codCli}"></h:inputText>
+
+                    </div>
+
+                    <div class=" col-sm-6 col-md-3">
+                        <p:outputLabel value="SR(A)"/><br></br>
+                        <h:inputText id="DESCRIPRO"  class="form-control" value="#{controllerFactura.llamarCliente.nomCli}"></h:inputText>
+
+                    </div>
+
+                    <div class=" col-sm-6 col-md-3">
+                        <p:outputLabel value="CEDULA"/><br></br>
+                        <h:inputText id="CEDULA" class="form-control" value="#{controllerFactura.llamarCliente.cedCli}"></h:inputText>
+
+                    </div>
+
+                    <div class=" col-sm-6 col-md-3">
+                        <p:outputLabel value="TELEFONO"/><br></br>
+                        <h:inputText  id="TELEFONO" class="form-control" value="#{controllerFactura.llamarCliente.telCli}"></h:inputText>
+
+                    </div><br></br><br></br>  
+
+                    <div  class=" col-sm-6 col-md-3">
+                        <p:outputLabel value="DIRECCION"/><br></br>
+                        <h:inputText  id="DIRECCION"  class="form-control" value="#{controllerFactura.llamarCliente.dirCli}"></h:inputText>
+                    </div>
+
+                    <div  class=" col-sm-6 col-md-3">
+                        <p:outputLabel value="CORREO"/><br></br>
+                        <h:inputText  id="CORREO"  class="form-control" value="#{controllerFactura.llamarCliente.emailCli}"></h:inputText>
+
+                    </div>
+
+                    <div  class=" col-sm-6 col-md-6">
+                 
+                    </div>
+                    <br></br><br></br>   
+                    <br></br><br></br> 
+                    <br></br><br></br> 
+
+                    <h:panelGrid columns="1" cellpadding="5">
+                        <p:commandButton value="CLIENTES" type="button" onclick="PF('dlg5').show();" />
+                        <p:commandButton value="PRODUCTOS" type="button" onclick="PF('wdialog2').show();" />
+
+
+                    </h:panelGrid>
+                    <div class=" col-sm-6 col-md-12" style="padding-top: 40px;"> 
+                        <!-- <h:commandButton value="CLIENTES" onclick="PF('dlg1').show();" style="margin-right: 10px;"></h:commandButton>-->
+
+                        <!-- <h:commandButton value="PRODUCTOS" onclick="PF('wdialog2').show();"></h:commandButton>-->
+
+                    </div>
+
+
+                </div><br></br><br></br> 
+
+                <div class="row">
+                    <div class="table-responsive col-sm-12" >
+
+
+                        <p:dataTable class="table table-striped" var="pro" resizableColumns="true" style="margin-bottom:20px" value="#{controllerFactura.llamarProducto}">
+                            <p:column headerText="Codigo">
+                                <h:outputText value="#{pro.codPro.codPro}" />
+                            </p:column>
+
+                            <p:column headerText="Descripcion">
+                                <h:outputText value="#{pro.codPro.despro}" />
+                            </p:column>
+
+                            <p:column headerText="Precio Unitario">
+                                <h:outputText value="#{pro.codPro.prepro}" />
+                            </p:column>
+
+                            <p:column headerText="Cantidad">
+                                <h:outputText value="#{pro.cantidad}" />
+                            </p:column>
+
+
+                            <p:column headerText="Importe">
+                                <h:outputText value="#{pro.importe}" />
+                            </p:column>
+
+                        </p:dataTable>
+
+
+
+                      
+
+                    </div><br></br>
+                    <h:form>
+                        <div class="row col-sm-6 col-md-6">
+                            <div  class=" col-sm-6 col-md-6">
+                                <p:outputLabel value="TOTAL"/><br></br>
+                                <h:inputText value="#{controllerFactura.totalAPagar}"></h:inputText>
+                            </div>
+                        </div>
+
+                        <div class=" col-sm-6 col-md-3" style="padding-top: 40px;"> 
+                            <h:commandButton value="CALCULAR" action="#{controllerFactura.calcular()}" /> <br></br> <br></br>
+                            <h:commandButton value="FACTURAR" action="#{controllerFactura.facturar()}" /> <br></br> <br></br>
+
+                        </div>
+                    </h:form>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </h:form>
+
+        <h:form>
+            <p:dialog id="dialog" widgetVar="wdialog2" header="LISTA DE PRODUCTOS" modal="true">
+                <div class="table-responsive col-sm-12" >
+                    <h:form>
+                        <p:growl id="msgs" showDetail="true" />
+                        <a href="#{controllerProduct.listarProductos()}"></a>
+                        <p:dataTable class="table table-striped" var="producto" resizableColumns="true" style="margin-bottom:20px" value="#{controllerProduct.producto}">
+                            <p:column headerText="Id">
+                                <h:outputText value="#{producto.codPro}" />
+                            </p:column>
+
+                            <p:column headerText="DESCRIPCION PRODUCTO">
+                                <h:outputText value="#{producto.despro}" />
+                            </p:column>
+
+                            <p:column headerText="PRECIO">
+                                <h:outputText value="#{producto.prepro}" />
+                            </p:column>
+
+                            <p:column headerText="STOCK">
+                                <h:outputText value="#{producto.cantidadpro}" />
+                            </p:column>
+
+                            <p:column headerText="CANTIDAD">
+                                <h:inputText value="#{producto.cantidadSeleccionada}" />
+                            </p:column>
+
+                            <p:column headerText="Accion">
+                                <h:commandButton value="Enviar" action ="#{controllerFactura.llamarDatosProducto(producto)}" /> <br></br> <br></br>
+                            </p:column>
+
+
+                        </p:dataTable>
+                        
+                    </h:form>
+                </div>
+
+            </p:dialog>
+
+
+        </h:form>
+        <!--ssssssssssssssssssssssssssssssssssssssssssssssss-->
+        <h:form>
+
+            <p:dialog header="Basic Dialog" widgetVar="dlg5" minHeight="40">
+                <div class="table-responsive col-sm-12" >
+                    <h:form>
+                        <p:growl id="msgs" showDetail="true" />
+
+                        <p:dataTable class="table table-striped" var="cliente" resizableColumns="true" style="margin-bottom:20px" value="#{controllerClientCreate.cliente}">
+                            <p:column headerText="Id">
+                                <h:outputText value="#{cliente.codCli}" />
+                            </p:column>
+
+                            <p:column headerText="Nombre">
+                                <h:outputText value="#{cliente.nomCli}" />
+                            </p:column>
+
+                            <p:column headerText="apellido">
+                                <h:outputText value="#{cliente.apeCli}" />
+                            </p:column>
+
+                            <p:column headerText="Cedula">
+                                <h:outputText value="#{cliente.cedCli}" />
+                            </p:column>
+
+
+                            <p:column headerText="Sexo">
+                                <h:outputText value="#{cliente.sexoCli}" />
+                            </p:column>
+
+                            <p:column headerText="Telofono">
+                                <h:outputText value="#{cliente.telCli}" />
+                            </p:column>
+
+                            <p:column headerText="Email">
+                                <h:outputText value="#{cliente.emailCli}" />
+                            </p:column>
+
+                            <p:column headerText="Direccion">
+                                <h:outputText value="#{cliente.dirCli}" />
+                            </p:column>
+
+                            <p:column headerText="Accion">
+
+                                <h:commandButton value="Enviar"  action="#{controllerFactura.llamarDatosCliente(cliente)}"/> <br></br> <br></br>
+                            </p:column>
+
+
+                        </p:dataTable>
+
+                    </h:form>
+                </div>
+            </p:dialog>
+        </h:form>
+
+
+
+
+
+
+    </h:body>
+</html>

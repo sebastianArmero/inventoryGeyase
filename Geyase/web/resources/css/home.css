@@ -1,0 +1,26 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23/09/2019, 02:59:54 PM
+    Author     : ARMERO
+*/
+
+.imgenFondo{
+    background-image: url("../img/fondo3.jpg");
+    height: 55em;
+    margin: -20px 0px 0px 0px;
+
+}
+
+.descipcion{
+    font-size: 18px;
+    font-family: monospace;
+    color: cornsilk;
+}
+.imgenFondo{
+    text-align: center;
+    padding-top: 10px;
+}

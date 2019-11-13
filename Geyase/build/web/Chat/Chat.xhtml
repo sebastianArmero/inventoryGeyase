@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+        <script>
+            
+             var socket = new WebSocket("ws://localhost:35106/WebSockets/progress");
+                
+                socket.onmessage = (event) => {
+                    
+                    document.getElementById("j_idt5:mensajes").value = document.getElementById("j_idt5:mensajes").value +"\n" + event.data;
+                    
+                    
+                    //alert(event.data);
+                }
+                
+                function formSubmit() { 
+                    texto = document.getElementById("j_idt5:mensajenuevo").value;
+                    socket.send(texto);
+                   
+                }
+            
+        </script>
+    </h:head>
+    <h:body>
+                <ui:include src="../Home/inventarioGeyase.xhtml"> </ui:include>
+
+        <h:form>       
+            <h:inputTextarea id="mensajes" style="width: auto;" class="form-control" rows="3" cols="50"></h:inputTextarea>
+  <h:inputText class="form-control" style="width: auto;" id="mensajenuevo"></h:inputText>
+  <h:commandButton  value="Enviar Mensaje"   class="btn btn-default" onclick="formSubmit(); return false;"></h:commandButton>
+         
+        
+        </h:form>
+    </h:body>
+</html>
+

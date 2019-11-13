@@ -1,0 +1,388 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <link href="resources/css/stilo.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/cssLayout.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/default.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
+        <script src="resources/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+        <script src="resources/js/bootstrap.js" type="text/javascript"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="resources/img/GSY4.ico" />
+
+
+        <title>INVENTARIOS GEYASE</title>
+    </h:head>
+    <h:body>
+        
+
+        <div id="top">
+            <ui:insert name="top">
+
+                <header>
+                    <nav class="navbar navbar-default encabezado">
+                        <div class="container-fluid">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+
+                                <a class="" href="#"><img class="logo" src="resources/img/GSY4.png" style="height: 55px;"/></a>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                    <li class="active"><a href="#">INICIO <span class="sr-only">(current)</span></a></li>
+                                    <li><a href="#nosotros">QUIENES SOMOS?</a></li>
+                                    <li><a href="#servicios">SERVICIOS</a></li>
+                                    <li><a href="#contacto">CONTACTO</a></li>
+
+                                </ul>
+
+                                <ul class="nav navbar-nav navbar-right inicios">
+                                    <h:form >
+                                        <h:commandButton class="btn btn-default" value="INICIO DE SESION" action="#{controllerCreateUser.redirigir()}" style= "margin-right: 12px;"></h:commandButton>
+                                        <h:commandButton class="btn btn-default" value="REGISTRARSE" action="#{controllerCreateUser.redirigir2()}"></h:commandButton>
+                                    </h:form>
+
+                                </ul>
+                            </div><!-- /.navbar-collapse -->
+                        </div><!-- /.container-fluid -->
+                    </nav>
+                </header>
+
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="resources/img/carrucel3 (1).jpg" alt=""/>
+
+                            <div class="carousel-caption">
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="resources/img/carrucel2_1.jpg" alt=""/>
+
+                            <div class="carousel-caption">
+
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <img src="resources/img/carrucel2 (2)_1.jpg" alt=""/>
+                            <div class="carousel-caption">
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </ui:insert>
+        </div>
+
+        <div id="content" class="center_content">
+            <ui:insert name="content">
+                <seccion id="nosotros">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6">
+                            <div class="">
+                                <img src="resources/img/NOSOTROS.png" style="height: 160px; padding-left: 17em;"/>
+
+                                <p style="font-variant: petite-caps;font-size: 15px;text-align: justify;">
+                                    Somos una empresa conformada por gente joven y emprendedora,
+                                    con el objetivo de brindar un sistema de inventarios para 
+                                    empresas o tiendas.
+                                </p>
+                                <img src="resources/img/MISIÓN.png" style="height: 160px; padding-left: 17em;"/>
+                                <p style="font-variant: petite-caps;font-size: 15px;text-align: justify;">
+                                    Ofreser servicio o soluciones integrales en el area de inventarios
+                                    para empresas o tiendas mediante el manejo de esta plataforma. 
+                                </p>
+                                <img src="resources/img/VISIÓN.png" style="height: 160px; padding-left: 17em;"/>
+                                <p style="font-variant: petite-caps;font-size: 15px;text-align: justify;">
+                                    Alcanzar el reconocimiento nacional como empresa prestadora de servicio, 
+                                    con una amplia gama de soluciones, capaz de tener una organizacion a su
+                                    empresa o tienda. 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <div class="thumbnail">
+                                <img src="resources/img/team.jpg" style="height: 50em;"/>
+
+                            </div>
+                        </div>
+                    </div> 
+                </seccion>
+
+                <seccion id="servicios">
+                    <div class="row" style="background-color: #ece9e4; margin-top: 60px;">
+                        <img src="resources/img/SERVICIOS.png" style="height: 21em;padding-left: 30em; margin-top: -57px;"/>
+
+                        <div style="display: flex;justify-content: center;min-height: 100vh; margin-top: -77px;">
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <img  src="resources/img/fact.jpg" alt=""/>
+                                    <div class="caption">
+                                        <h3>FACTURACIÓN</h3>
+                                        <p style="font-variant: petite-caps;font-size: 15px;text-align: justify;">Con las facturas en nuestra pagina puede quitarle 
+                                            costos a las empresas para el manejo de su documentación 
+                                            interna y la que necesitan a los efectos del control fiscal, así como minimizar 
+                                            costos de almacenamiento de datos y de recuperación de la información.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <img src="resources/img/inventario.jpg" alt=""/>
+                                    <div class="caption">
+                                        <h3>INVENTARIOS</h3>
+                                        <p style="font-variant: petite-caps;font-size: 15px;text-align: justify;">Proveer o distribuir adecuadamente los materiales necesarios a la empresa.
+                                            Colocándolos a disposición en el momento indicado, para así evitar aumentos
+                                            de costos perdidas de los mismos. Permitiendo satisfacer correctamente las necesidades 
+                                            reales de la empresa, a las cuales debe permanecer constantemente adaptado.
+                                            Por lo tanto la gestión de inventarios debe ser atentamente controlada y vigilada. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </seccion>
+
+
+                <seccion id="contacto">
+                    <div class="row">
+
+                        <img src="resources/img/CONTACTO.png" style="height: 21em;padding-left: 30em;margin-left: -49em;margin-top: -48px;"/>
+
+                        <div class="col-sm-6 col-md-6" style="margin-top: 13em;">
+
+                            <div class="thumbnail">
+                                <img src="resources/img/callCente.jpg" alt=""/>
+                            </div>
+                            <p style="font-variant: petite-caps;font-size: 15px;text-align: justify;">
+                                Si deseas mayor información sobre nuestros servicios,
+                                o necesitas algún requerimiento, no dudes en comunicarte
+                                a traves de los siguientes medios.
+                            </p>
+                            <br></br>
+
+                            <p style="font-variant: petite-caps;font-size: 15px;text-align: justify;"> <!--<i class="fa fa-phone" aria-hidden="true"></i>-->
+                                <span class="col-md-1 col-md-offset-2 text-center">  <i class="fab fa-whatsapp fa-spin"></i> </span>3006266342
+
+
+                            </p>
+                            <p style="font-variant: petite-caps;font-size: 15px;text-align: justify;">
+                                <span class="col-md-1 col-md-offset-2 text-center">  <i class="fa fa-envelope fa-spin" aria-hidden="true"></i></span>sebarmero@gmail.com
+
+
+                            </p>
+                        </div>
+
+                        <div class="col-sm-6 col-md-6">
+                            <div class="col-sm-6 col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="well well-sm">
+                                            <h:form class="form-horizontal">
+                                                <fieldset>
+                                                    <legend class="text-center header">Contactenos</legend>
+
+                                                    <div class="form-group">
+                                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-open bigicon fa-spin" aria-hidden="true"></i></span>
+                                                        <div class="col-md-8">
+
+                                                            <h:inputText id="fname"  pt:placeholder="ASUNTO"  value="#{controllerEmailCont.asunto}" class="form-control"></h:inputText>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="form-group">
+                                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-file bigicon" aria-hidden="true"></i></span>
+
+                                                        <div class="col-md-8">
+                                                            <h:inputTextarea  rows="10" cols="50" pt:placeholder="Ingrese su masaje, telefono para nosotros aquí. Nos pondremos en contacto con usted dentro de 2 días hábiles."  id="message" value="#{controllerEmailCont.mensaje}" class="form-control"></h:inputTextarea>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+
+                                                        <div class="col-md-12 text-center">
+                                                            <h:commandButton class="btn btn-primary btn-lg" value="Enviar" action="#{controllerEmailCont.enviarMensaje()}"></h:commandButton>
+
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </h:form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-12" style="padding-top: 50px;">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3412.120717201033!2d-76.33477448472738!3d3.285056947807221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3a7309eda184b3%3A0x46cf6a88c189d04d!2sTarragona%2C%20Florida%2C%20Valle%20del%20Cauca!5e1!3m2!1ses-419!2sco!4v1571628292389!5m2!1ses-419!2sco" width="1200" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+
+                        </div>
+
+                    </div>
+                </seccion>
+
+
+
+
+
+
+            </ui:insert>
+        </div>
+
+        <div id="bottom" class="principal">
+            <ui:insert name="bottom">
+                <!-- Footer -->
+                <!-- Footer -->
+                <footer class="page-footer font-small indigo">
+
+                    <!-- Footer Links -->
+                    <div class="container ">
+
+                        <!-- Grid row-->
+                        <div class="row text-center d-flex justify-content-center pt-5 mb-3 texto1">
+
+                            <!-- Grid column -->
+                            <div class="col-md-3 mb-3">
+                                <h6 class="text-uppercase font-weight-bold">
+                                    <a href="#nosotros" class="texto1">NOSOTROS</a>
+                                </h6>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-3 mb-3">
+                                <h6 class="text-uppercase font-weight-bold">
+                                    <a href="#servicios" class="texto1">SERVICIOS</a>
+                                </h6>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-3 mb-3">
+                                <h6 class="text-uppercase font-weight-bold">
+                                    <a href="#contacto" class="texto1">contacto</a>
+                                </h6>
+                            </div>
+                            <!-- Grid column -->
+
+
+
+                        </div>
+                        <!-- Grid row-->
+                        <hr class="rgba-white-light" style="margin: 0 15%;"/>
+
+                        <!-- Grid row-->
+                        <div class="row d-flex text-justify justify-content-center mb-md-0 mb-4">
+
+                            <!-- Grid column -->
+                            <div class="col-md-12 col-12 mt-5 texto2">
+                                <p style="line-height: 1.7rem"/>Somos una empresa conformada por gente joven y emprendedora,
+                                con el objetivo de brindar un sistema de inventarios para empresas o tiendas.
+                                Proveer o distribuir adecuadamente los materiales necesarios a la empresa. Colocándolos a disposición
+                                en el momento indicado, para así evitar aumentos de costos perdidas de los mismos. Permitiendo 
+                                satisfacer correctamente las necesidades reales de la empresa, a las cuales debe permanecer constantemente adaptado.
+                                Por lo tanto la gestión de inventarios debe ser atentamente controlada y vigilada. 
+
+                            </div>
+                            <!-- Grid column -->
+
+                        </div>
+                        <!-- Grid row-->
+                        <hr class="clearfix d-md-none rgba-white-light" style="margin: 3% 17% 5%;"/>
+
+                        <!-- Grid row-->
+                        <div class="row pb-3 icono">
+
+                            <!-- Grid column -->
+                            <div class="col-md-12">
+
+                                <div class="mb-5 flex-center">
+
+                                    <!-- Facebook 
+                                    fa-spin  sirvve para girar los iconos
+                                    -->
+                                    <a class="fb-ic iconoP">
+                                        <i class="fab fa-facebook-f fa-lg white-text mr-4 fa-spin"> </i>
+                                    </a>
+                                    <!-- Twitter -->
+                                    <a class="tw-ic iconoP">
+                                        <i class="fab fa-twitter fa-lg white-text mr-4 fa-spin"> </i>
+                                    </a>
+                                    <!-- Google +-->
+                                    <a class="gplus-ic iconoP">
+                                        <i class="fab fa-google-plus-g fa-lg white-text mr-4 fa-spin"> </i>
+                                    </a>
+                                    <!--Linkedin -->
+                                    <a class="li-ic iconoP">
+                                        <i class="fab fa-linkedin-in fa-lg white-text mr-4 fa-spin"> </i>
+                                    </a>
+                                    <!--Instagram-->
+                                    <a class="ins-ic iconoP">
+                                        <i class="fab fa-instagram fa-lg white-text mr-4 fa-spin"> </i>
+                                    </a>
+                                    <!--Pinterest-->
+                                    <a class="pin-ic iconoP">
+                                        <i class="fab fa-pinterest fa-lg white-text fa-spin"> </i>
+                                    </a>
+
+                                </div>
+
+                            </div>
+                            <!-- Grid column -->
+
+                        </div>
+                        <!-- Grid row-->
+
+                    </div>
+                    <!-- Footer Links -->
+
+                    <!-- Copyright © -->
+                    <div class="footer-copyright text-center py-3 pie"><i class="far fa-copyright fa-spin"></i> 2019 Copyright:
+                        <a href="" class="iconoP"> GEYASE.com</a>
+                    </div>
+                    <!-- Copyright -->
+
+                </footer>
+                <!-- Footer -->
+                <!-- Footer -->
+
+            </ui:insert>
+        </div>
+
+    </h:body>
+</html>
+
